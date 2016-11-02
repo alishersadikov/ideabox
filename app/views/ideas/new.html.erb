@@ -1,0 +1,7 @@
+<%= form_for @idea do |f| %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.collection_select :category_id, Category.all, :id, :title, include_blank: true %>
+  <%= f.hidden_field :user_id, value: @user_id %>
+   <%= f.submit %>
+<% end %>
